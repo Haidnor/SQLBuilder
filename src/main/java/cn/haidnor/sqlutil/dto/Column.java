@@ -9,7 +9,7 @@ public class Column {
     /**
      * 字段名称
      */
-    private String name = "";
+    private String name = null;
 
     /**
      * 字段数据类型
@@ -24,17 +24,20 @@ public class Column {
     /**
      * 字段注释
      */
-    private String comments = "";
+    private String comments = null;
 
     /**
      * 是否为主键
      */
-    private String primaryKey = "";
+    private String primaryKey = null;
 
     /**
      * 是否为自增量
      */
-    private String isAutoIncrement = "";
+    private String isAutoIncrement = null;
+
+    /** 默认值 */
+    private String defaultValue = null;
 
     /**
      * 是否不为空
@@ -95,5 +98,13 @@ public class Column {
 
     public void setIsNull(String isNull) {
         this.isNull = isNull;
+    }
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 }

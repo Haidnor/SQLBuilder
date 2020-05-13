@@ -10,6 +10,6 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Engine {
-    cn.haidnor.sqlutil.enums.Engine value();
+public @interface TCharset {
+    cn.haidnor.sqlutil.enums.Charset value();
 }
