@@ -3,9 +3,9 @@ SQLBuilder 是一个用于生成 MySql 数据库建表 SQL 语句的工具包。
 
 # 使用案例
 ```java
-import cn.haidnor.sqlutil.annotations.*;
-import cn.haidnor.sqlutil.enums.*;
-import cn.haidnor.sqlutil.util.SQLBuilder;
+import cn.haidnor.sqlBuilder.annotations.*;
+import cn.haidnor.sqlBuilder.enums.*;
+import cn.haidnor.sqlBuilder.util.SQLBuilder;
 import java.sql.Date;
 
 @TEngine(Engine.MyISAM)

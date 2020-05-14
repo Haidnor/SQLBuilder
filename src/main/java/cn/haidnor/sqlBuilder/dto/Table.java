@@ -1,7 +1,7 @@
-package cn.haidnor.sqlutil.dto;
+package cn.haidnor.sqlBuilder.dto;
 
-import cn.haidnor.sqlutil.enums.Charset;
-import cn.haidnor.sqlutil.enums.Engine;
+import cn.haidnor.sqlBuilder.enums.Charset;
+import cn.haidnor.sqlBuilder.enums.Engine;
 
 import java.util.ArrayList;
 

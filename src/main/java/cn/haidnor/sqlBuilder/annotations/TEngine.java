@@ -1,4 +1,4 @@
-package cn.haidnor.sqlutil.annotations;
+package cn.haidnor.sqlBuilder.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,7 +8,8 @@ import java.lang.annotation.Target;
 /**
  * @author Haidnor
  */
-@Target({ElementType.FIELD,ElementType.TYPE})
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PrimaryKey {
+public @interface TEngine {
+    cn.haidnor.sqlBuilder.enums.Engine value();
 }

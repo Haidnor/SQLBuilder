@@ -1,9 +1,9 @@
-package cn.haidnor.sqlutil.util;
+package cn.haidnor.sqlBuilder.util;
 
-import cn.haidnor.sqlutil.annotations.*;
-import cn.haidnor.sqlutil.dto.Column;
-import cn.haidnor.sqlutil.dto.Table;
-import cn.haidnor.sqlutil.enums.DataType;
+import cn.haidnor.sqlBuilder.annotations.*;
+import cn.haidnor.sqlBuilder.dto.Column;
+import cn.haidnor.sqlBuilder.dto.Table;
+import cn.haidnor.sqlBuilder.enums.DataType;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;

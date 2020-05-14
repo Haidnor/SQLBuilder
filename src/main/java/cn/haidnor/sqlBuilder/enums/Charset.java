@@ -1,4 +1,4 @@
-package cn.haidnor.sqlutil.enums;
+package cn.haidnor.sqlBuilder.enums;
 
 /**
  * @author Haidnor
