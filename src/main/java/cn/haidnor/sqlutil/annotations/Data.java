@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Data {
     DataType value();
-    int length();
+    int length() default 0;
 }
