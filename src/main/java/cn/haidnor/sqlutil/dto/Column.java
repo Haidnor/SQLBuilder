@@ -1,6 +1,6 @@
-package cn.haidnor.sqlBuilder.dto;
+package cn.haidnor.sqlutil.dto;
 
-import cn.haidnor.sqlBuilder.enums.DataType;
+import cn.haidnor.sqlutil.enums.DataType;
 
 /**
  * @author Haidnor

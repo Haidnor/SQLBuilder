@@ -1,4 +1,4 @@
-package cn.haidnor.sqlBuilder.annotations;
+package cn.haidnor.sqlutil.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

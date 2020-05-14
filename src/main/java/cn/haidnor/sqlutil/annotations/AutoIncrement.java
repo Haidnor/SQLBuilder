@@ -1,4 +1,4 @@
-package cn.haidnor.sqlBuilder.annotations;
+package cn.haidnor.sqlutil.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * @author Haidnor
  */
-@Target({ElementType.FIELD,ElementType.TYPE})
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PrimaryKey {
+public @interface AutoIncrement {
 }

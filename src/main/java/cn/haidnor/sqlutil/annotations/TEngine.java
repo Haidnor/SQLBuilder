@@ -1,4 +1,6 @@
-package cn.haidnor.sqlBuilder.annotations;
+package cn.haidnor.sqlutil.annotations;
+
+import cn.haidnor.sqlutil.enums.Engine;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,7 +10,8 @@ import java.lang.annotation.Target;
 /**
  * @author Haidnor
  */
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface AutoIncrement {
+public @interface TEngine {
+    Engine value();
 }

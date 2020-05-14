@@ -1,4 +1,4 @@
-package cn.haidnor.sqlBuilder.annotations;
+package cn.haidnor.sqlutil.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,8 +8,8 @@ import java.lang.annotation.Target;
 /**
  * @author Haidnor
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TCharset {
-    cn.haidnor.sqlBuilder.enums.Charset value();
+public @interface Length {
+    int value();
 }

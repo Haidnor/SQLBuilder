@@ -1,4 +1,6 @@
-package cn.haidnor.sqlBuilder.annotations;
+package cn.haidnor.sqlutil.annotations;
+
+import cn.haidnor.sqlutil.enums.DataType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,6 +12,7 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Length {
-    int value();
+public @interface Data {
+    DataType value();
+    int length();
 }
