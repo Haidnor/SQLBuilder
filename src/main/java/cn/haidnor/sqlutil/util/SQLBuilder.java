@@ -20,8 +20,9 @@ public class SQLBuilder {
 
     /**
      * 构建 建表SQL 语句
+     *
      * @param dtoClass Table 模型类的 Class对象
-     * @return  建表 SQL 语句
+     * @return 建表 SQL 语句
      */
     public static String buildCreatTableSQL(Class dtoClass) {
         Table table = new Table();
@@ -31,7 +32,7 @@ public class SQLBuilder {
         if (engine != null) {
             table.setEngine(engine.value());
         }
-        TCharset charset  = (TCharset) dtoClass.getAnnotation(TCharset.class);
+        TCharset charset = (TCharset) dtoClass.getAnnotation(TCharset.class);
         if (charset != null) {
             table.setCharset(charset.value());
         }
@@ -54,46 +55,46 @@ public class SQLBuilder {
                 // VARCHAR 数据类型默认长度为255
                 column.setLength(255);
             } else if (fieldClass == long.class) {
-                                                            // long -> BIGINT
+                // long -> BIGINT
                 column.setDataType(DataType.BIGINT);
             } else if (fieldClass == int.class) {
-                                                            // int -> INTEGER
+                // int -> INTEGER
                 column.setDataType(DataType.INTEGER);
             } else if (fieldClass == short.class) {
-                                                            // short -> SMALLINT
+                // short -> SMALLINT
                 column.setDataType(DataType.SMALLINT);
             } else if (fieldClass == byte.class) {
-                                                            // byte -> TINYINT
+                // byte -> TINYINT
                 column.setDataType(DataType.TINYINT);
             } else if (fieldClass == double.class) {
-                                                            // java.lang.Double -> DOUBLE
-                column.setDataType( DataType.DOUBLE);
+                // java.lang.Double -> DOUBLE
+                column.setDataType(DataType.DOUBLE);
             } else if (fieldClass == float.class) {
-                                                            // float -> FLOAT
+                // float -> FLOAT
                 column.setDataType(DataType.FLOAT);
             } else if (fieldClass == Boolean.class) {
-                                                            // java.lang.Boolean -> TINYINT
+                // java.lang.Boolean -> TINYINT
                 column.setDataType(DataType.TINYINT);
             } else if (fieldClass == byte[].class) {
-                                                            // byte[] -> BLOB
+                // byte[] -> BLOB
                 column.setDataType(DataType.BLOB);
             } else if (fieldClass == BigInteger.class) {
-                                                            // java.math.BigInteger -> BIGINT
+                // java.math.BigInteger -> BIGINT
                 column.setDataType(DataType.BIGINT);
             } else if (fieldClass == BigDecimal.class) {
-                                                            // 	java.math.BigDecimal -> DECIMAL
+                // 	java.math.BigDecimal -> DECIMAL
                 column.setDataType(DataType.DECIMAL);
             } else if (fieldClass == Date.class) {
-                                                            // java.sql.Date -> DATE
+                // java.sql.Date -> DATE
                 column.setDataType(DataType.DATE);
             } else if (fieldClass == Time.class) {
-                                                            // java.sql.Time -> TIME
+                // java.sql.Time -> TIME
                 column.setDataType(DataType.TIME);
             } else if (fieldClass == Timestamp.class) {
-                                                            // java.sql.Timestamp -> DATETIME
+                // java.sql.Timestamp -> DATETIME
                 column.setDataType(DataType.DATETIME);
             } else {
-                                                            // 其它类型未定义
+                // 其它类型未定义
                 column.setDataType(DataType.Undefined);
             }
 
@@ -146,12 +147,14 @@ public class SQLBuilder {
 
     /**
      * 构建建表 SQL 语句, 分析 Table 模型数据, 拼接 SQL 语句
+     *
      * @param table 数据库表模型对象
      * @return 建表 SQL 语句
      */
     private static String creatTableSQL(Table table) {
         StringBuffer sb = new StringBuffer();
         ArrayList<Column> columns = table.getColumns();
+
         // 表名
         sb.append("CREATE TABLE " + table.getName() + " (" + '\n');
         columns.forEach(column -> {
@@ -177,17 +180,21 @@ public class SQLBuilder {
             // 字段默认值
             if (column.getDefaultValue() != null) {
                 if (column.getDataType() != DataType.VARCHAR) {
-                    sb.append(" " + "default " +column.getDefaultValue());
+                    sb.append(" " + "default " + column.getDefaultValue());
                 } else {
-                    sb.append(" " + "default '" +column.getDefaultValue() + "'");
+                    sb.append(" " + "default '" + column.getDefaultValue() + "'");
                 }
             }
             // 字段注解
             if (column.getComments() != null) {
-                sb.append(" " +"COMMENT '" + column.getComments() + "'," + '\n');
+                sb.append(" " + "COMMENT '" + column.getComments() + "'," + '\n');
+            } else {
+                sb.append("," + '\n');
             }
         });
+
         sb.deleteCharAt(sb.length() - 2);
+
         // 表引擎
         sb.append(")ENGINE=" + table.getEngine());
         // 表字符集
